@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block TituloPagina %}
+Sobre mi
+{% endblock TituloPagina %}
+
+{% block ImagenPrincipal %}
+url('{% static 'assets/img/AboutMe.jpg' %}')
+{% endblock ImagenPrincipal %}
+
+{% block Post %}
+
+{% for object in object_list %}
+<div class="card-deck">
+    <div class="card p-3">
+        {% comment %} <img class="card-img-top img-fluid" src="https://www.facebook.com/photo/?fbid=2172422046322335&set=a.1379501828947698" alt="Card image cap" height="250px" width="250px"> {% endcomment %}
+        <div class="text-center bg-secondary">
+            <img src="https://www.facebook.com/photo/?fbid=2172422046322335&set=a.1379501828947698" alt="" class="img-fluid rounded mx-auto d-block img-thumbnail m-2" height="150px" width="150px"> 
+        </div>
+        <br>
+        <div class"card-block">
+            <center><h4 class="card-title"> {{ object.titulo}} </h4></center>
+            <p class="card-text"> {{ object.contenido | safe}} </p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock Post %}
+
+<br>
+<br>
+<img src="https://www.facebook.com/photo/?fbid=2172422046322335&set=a.1379501828947698" class="img-fluid rounded-start" alt="">
+
