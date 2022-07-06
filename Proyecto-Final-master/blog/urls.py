@@ -3,6 +3,9 @@ from django.contrib.auth.views import LogoutView
 from .views import  Inicio, PostParches, PostNoticias, PostSports, PostComunidad, \
                     CrearPost, DetallePost, EditarPost, BorrarPost, ListaPost, AboutMe, \
                     login_request, register_request, logout_request, editarPerfil, contacto
+from django.conf import settings
+from django.conf.urls.static import static
+from django.urls import path
 
 
 urlpatterns = [
@@ -26,3 +29,4 @@ urlpatterns = [
     # path('accounts/profile/', profile_request, name='profile'),
     path('accounts/editar', editarPerfil, name='editar_perfil'),
     ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

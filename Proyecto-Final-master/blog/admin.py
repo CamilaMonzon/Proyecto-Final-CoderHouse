@@ -1,6 +1,7 @@
 from re import search
 from django.contrib import admin
 from .models import Autor, Categoria, Post, Contacto, SobreMi
+from django.contrib import admin
 
 # -----------------------
 
